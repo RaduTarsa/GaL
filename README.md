@@ -1,0 +1,2 @@
+# GaL
+Proiect Tehnologii Web
