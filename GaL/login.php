@@ -14,7 +14,7 @@
 <body>
 
   <form action="login.php" method="post">
-    <?php include('errors.php'); ?>
+    <?php include('scripts/errors.php'); ?>
     <div class="container">
       <label for="username"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="username">
