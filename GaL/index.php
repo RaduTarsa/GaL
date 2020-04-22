@@ -36,6 +36,9 @@
             <a href="./index.php">HOME</a>
             <a href="./service.php">SERVICE</a>
             <a href="./profile.php">PROFILE</a>
+            <?php  if (isset($_SESSION['username'])) : ?>
+            	<a href="index.php?logout='1'" style="color: red;">LOGOUT</a>
+            <?php endif ?>
           </ul>
         </div>
       </div>
@@ -54,12 +57,6 @@
       </div>
   	<?php endif ?>
   </div>
-
-<div>
-    <?php  if (isset($_SESSION['username'])) : ?>
-    	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
-    <?php endif ?>
-</div>
 
   <section class="description">
     <h1>scris scris scris...</h1>
