@@ -46,8 +46,8 @@
   </header>
 
   <section class="profile-info">
-      <img class="user-img" src="Resources\pozaprofil.png" alt="poza profil" width="200px" height="200px">
-      <h3><img class="user-badge"src="Resources\userbadge.png" alt="poza profil" width="42px" height="42px">Jane Doe</h3>
+      <img class="user-img" src="resources\profilepicture.png" alt="profile picture" width="200px" height="200px">
+      <h3><img class="user-badge"src="resources\userbadge.png" alt="user badge" width="42px" height="42px">Jane Doe</h3>
 
   </section>
 
