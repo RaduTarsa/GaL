@@ -46,7 +46,9 @@
   </header>
 
   <section class="profile-info">
-    <h1>nimic important</h1>
+      <img class="user-img" src="Resources\pozaprofil.png" alt="poza profil" width="200px" height="200px">
+      <h3><img class="user-badge"src="Resources\userbadge.png" alt="poza profil" width="42px" height="42px">Jane Doe</h3>
+
   </section>
 
   <footer>

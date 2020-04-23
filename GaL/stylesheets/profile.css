@@ -95,3 +95,15 @@ body {
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
+.profile-info h3{
+  text-align: center;
+}
+.profile-info .user-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profile-info .user-badge{
+  vertical-align: middle;
+  padding-right: 5px;
+}
