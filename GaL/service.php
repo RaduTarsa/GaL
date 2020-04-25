@@ -1,16 +1,4 @@
-<?php
-  session_start();
-
-  if (!isset($_SESSION['username'])) {
-  	$_SESSION['msg'] = "You must log in first";
-  	header('location: login.php');
-  }
-  if (isset($_GET['logout'])) {
-  	session_destroy();
-  	unset($_SESSION['username']);
-  	header("location: login.php");
-  }
-?>
+<?php include('scripts/validation.php') ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,7 +25,7 @@
             <a href="./service.php">SERVICE</a>
             <a href="./profile.php">PROFILE</a>
             <?php  if (isset($_SESSION['username'])) : ?>
-            	<a href="index.php?logout='1'" style="color: red;">LOGOUT</a>
+            	<a href="service.php?logout='1'" style="color: red;">LOGOUT</a>
             <?php endif ?>
           </ul>
         </div>

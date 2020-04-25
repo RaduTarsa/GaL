@@ -12,7 +12,7 @@
     </head>
 
 <body>
-
+  
   <form action="login.php" method="post">
     <?php include('scripts/errors.php'); ?>
     <div class="container">
@@ -25,9 +25,7 @@
       <button type="submit" name="login_user">Login</button>
 
       <div class="small_container">
-        <b>
-    		No account? <a href="register.php">Register</a>
-        </b>
+        <b>No account? <a href="register.php">Register</a></b>
       </div>
     </div>
 

@@ -25,9 +25,7 @@
       <button type="submit" name="register_user">Register</button>
 
       <div class="small_container">
-        <b>
-    		Have an account? <a href="login.php">Login</a>
-        </b>
+        <b>Have an account? <a href="login.php">Login</a></b>
       </div>
     </div>
 

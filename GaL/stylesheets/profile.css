@@ -1,6 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
+    margin-bottom: 50px;
   }
 
   .container {
@@ -53,7 +54,7 @@ body {
   .dropdown-content a {
     float: none;
     color: black;
-    padding: 12px 16px;
+    padding: 8px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -66,9 +67,7 @@ body {
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  .profile-info{
-      margin: 10px;
-  }
+
   footer {
     position: fixed;
     left: 0;
@@ -95,15 +94,32 @@ body {
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
-.profile-info h3{
+
+.profile-info{
+    margin: 10px;
+}
+
+.profile-info h3 {
   text-align: center;
 }
-.profile-info .user-img{
+
+.profile-info .user-img {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-.profile-info .user-badge{
+
+.profile-info .user-badge {
   vertical-align: middle;
   padding-right: 5px;
+}
+
+.profile-editor input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 7px 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
 }
