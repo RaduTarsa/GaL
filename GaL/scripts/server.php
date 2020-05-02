@@ -38,7 +38,7 @@ if (isset($_POST['register_user'])) {
     $firstname = 'changeme';
     $lastname = 'changeme';
 
-    $imagepath = 'resources\profilepicture.png';
+    $imagepath = 'resources/profilepicture.png';
 
     $isadmin = 0;
 
