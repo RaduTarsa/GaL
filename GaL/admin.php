@@ -8,7 +8,7 @@
         <meta name="keywords" content="aici pui keywords">
         <meta name="author" content="Bogdan Palasanu & Radu Tarsa">
         <title>GaL | Service</title>
-        <link rel="stylesheet" href="./stylesheets/service.css">
+        <link rel="stylesheet" href="./stylesheets/admin.css">
     </head>
 
 <body>
@@ -26,7 +26,7 @@
             <a href="./admin.php">ADMIN</a>
             <a href="./profile.php">PROFILE</a>
             <?php  if (isset($_SESSION['username'])) : ?>
-            	<a href="service.php?logout='1'" style="color: red;">LOGOUT</a>
+            	<a href="admin.php?logout='1'" style="color: red;">LOGOUT</a>
             <?php endif ?>
           </ul>
         </div>
@@ -34,9 +34,24 @@
     </div>
   </header>
 
-  <section class="description">
-    <h1>Aceasta este o descriere a site-ului.</h1>
-  </section>
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+
+  <select id="Tests" name="testList">
+    <option value="volvo">Test1</option>
+    <option value="saab">Test2</option>
+    <option value="fiat">Test3</option>
+    <option value="audi">Test4</option>
+ </select>
+<button type="submit" class="deleteButton">Delete</button>
+
+<p></p>
+
+<button type="submit" class="addButton">Add Test</button>
 
   <footer>
     <p>Bogdan Palasanu & Radu Tarsa, Copyright &copy; 2020</p>
