@@ -1,4 +1,4 @@
-<?php include('scripts/validation.php') ?>
+<?php include('scripts/loginValidation.php') ?>
 <?php include('scripts/profile-controller.php') ?>
 <!DOCTYPE html>
 <html>
@@ -25,8 +25,10 @@
             <a href="./index.php">HOME</a>
             <a href="./service.php">SERVICE</a>
             <a href="./profile.php">PROFILE</a>
-            <a href="./admin.php">ADMIN</a>
-            <?php  if (isset($_SESSION['username'])) : ?>
+            <?php if (isset($_SESSION['isadmin']) && $_SESSION['isadmin'] == 1) : ?>
+              <a href="./admin.php">ADMIN</a>
+            <?php endif ?>
+            <?php if (isset($_SESSION['username'])) : ?>
             	<a href="profile.php?logout='1'" style="color: red;">LOGOUT</a>
             <?php endif ?>
           </ul>
