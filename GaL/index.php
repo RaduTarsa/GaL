@@ -23,8 +23,8 @@
           <ul class="dropb-ul">
             <a href="./index.php">HOME</a>
             <a href="./service.php">SERVICE</a>
-            <a href="./admin.php">ADMIN</a>
             <a href="./profile.php">PROFILE</a>
+            <a href="./admin.php">ADMIN</a>
             <?php  if (isset($_SESSION['username'])) : ?>
             	<a href="index.php?logout='1'" style="color: red;">LOGOUT</a>
             <?php endif ?>
