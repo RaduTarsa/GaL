@@ -41,6 +41,33 @@
     <h1>Aceasta este o descriere a site-ului.</h1>
   </section>
 
+  <br>
+
+<!-- use a select to select a game, a button to start the learn/test phase -->
+  <button onclick="document.getElementById('id01').style.display='block'">Open Modal</button>
+  <div id='id01' class="quizPanel" style="display:none;">
+      <div style="font-size:20pt;">Quiz</div>
+       <div class="question" id="question">
+       </div>
+       <div>
+         <input type="radio" id="opt1" name="options">
+         <span id="option1"></span>
+      </div>
+      <div>
+        <input type="radio" id="opt2" name="options">
+        <span id="option2"></span>
+      </div>
+      <div>
+        <input type="radio" id="opt3" name="options">
+        <span id="option3"></span>
+      </div>
+      <div>
+        <button class="nextButton" onclick="checkAnswer()">next ></button>
+      </div>
+  </div>
+  <script src="resources/games/1/test.json"></script>
+  <?php include('scripts/quizController.php') ?>
+
   <footer>
     <p>Bogdan Palasanu & Radu Tarsa, Copyright &copy; 2020</p>
   </footer>

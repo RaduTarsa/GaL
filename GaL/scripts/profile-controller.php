@@ -2,6 +2,8 @@
 
 $db = mysqli_connect('localhost', 'root', '', 'GaL');
 
+$errors = array();
+
 $username = $_SESSION['username'];
 $userid = "";
 $firstname = "";
@@ -28,53 +30,63 @@ if ($result = mysqli_query($db, $sql)) {
 }
 
 if(isset($_POST['upload-image'])){
+    $imgtypeerr = 0;
+    if (!in_array(strtolower(pathinfo(basename($_FILES["image"]["name"]),
+    PATHINFO_EXTENSION)) , array("jpg", "jpeg", "png"))) { $imgtypeerr = 1; }
+    if ($imgtypeerr == 1) { array_push($errors, "Profile image has to be jpg, jpeg or png"); }
     $pname = $_SESSION['userid'].".png";
     $tname = $_FILES["image"]["tmp_name"];
     $imagepath = 'resources/userimages/'.$pname;
     $_SESSION['imagepath'] = $imagepath;
-    move_uploaded_file($tname, $imagepath);
-    $update = "UPDATE users SET imagepath = '$imagepath' WHERE id='$userid'";
-    $query_run = mysqli_query($db, $update);
-    if($query_run)
-    {
-      header('location: profile.php');
-    }
-    else {
-      echo '<script type="text/javascript"> alert("Image not updated") </script>';
+    if (count($errors) == 0) {
+      move_uploaded_file($tname, $imagepath);
+      $update = "UPDATE users SET imagepath = '$imagepath' WHERE id='$userid'";
+      $query_run = mysqli_query($db, $update);
+      if($query_run)
+      {
+        header('location: profile.php');
+      }
+      else {
+        echo '<script type="text/javascript"> alert("Image not updated") </script>';
+      }
     }
  }
 
 if(isset($_POST['editfname']))
 {
   $firstname = $_POST['fname'];
-  $_SESSION['firstname'] = $firstname;
-  $update = "UPDATE users SET firstname = '$firstname' WHERE id='$userid'";
-  $query_run = mysqli_query($db, $update);
-
-  if($query_run)
-  {
-    header('location: profile.php');
-  }
-  else
-  {
-    echo '<script type="text/javascript"> alert("First not updated") </script>';
+  if (empty($_POST['fname'])) { array_push($errors, "First name must be not empty"); }
+  if (count($errors) == 0) {
+    $_SESSION['firstname'] = $firstname;
+    $update = "UPDATE users SET firstname = '$firstname' WHERE id='$userid'";
+    $query_run = mysqli_query($db, $update);
+    if($query_run)
+    {
+      header('location: profile.php');
+    }
+    else
+    {
+      echo '<script type="text/javascript"> alert("First not updated") </script>';
+    }
   }
 }
 
 if(isset($_POST['editlname']))
 {
   $lastname = $_POST['lname'];
-  $_SESSION['firstname'] = $lastname;
-  $update = "UPDATE users SET lastname = '$lastname' WHERE id='$userid'";
-  $query_run = mysqli_query($db, $update);
-
-  if($query_run)
-  {
-    header('location: profile.php');
-  }
-  else
-  {
-    echo '<script type="text/javascript"> alert("Last not updated") </script>';
+  if (empty($_POST['lname'])) { array_push($errors, "Last name must be not empty"); }
+  if (count($errors) == 0) {
+    $_SESSION['firstname'] = $lastname;
+    $update = "UPDATE users SET lastname = '$lastname' WHERE id='$userid'";
+    $query_run = mysqli_query($db, $update);
+    if($query_run)
+    {
+      header('location: profile.php');
+    }
+    else
+    {
+      echo '<script type="text/javascript"> alert("Last not updated") </script>';
+    }
   }
 }
 ?>

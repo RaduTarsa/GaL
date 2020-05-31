@@ -48,20 +48,21 @@
 
   <hr>
 
+<?php include('scripts/errors.php'); ?>
   <div class="profile-editor">
     <h4>Edit your profile:</h4>
     <form method="post" enctype="multipart/form-data">
-      <label>Select Image</label>
+      <label class="txt">Select Image</label>
       <input type="file" name="image" id="choose">
       <input type="submit" name="upload-image" value="Upload image">
     </form>
     <form method="post">
-      <label>Edit First Name</label>
+      <label class="txt">Edit First Name</label>
       <input type="text" placeholder="Enter your new first name" name="fname">
       <input type="submit" name="editfname" value="Edit">
     </form>
     <form method="post">
-      <label>Edit Last Name</label>
+      <label class="txt">Edit Last Name</label>
       <input type="text" placeholder="Enter your new last name" name="lname">
       <input type="submit" name="editlname" value="Edit">
     </form>

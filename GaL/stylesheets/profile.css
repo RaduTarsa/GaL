@@ -96,7 +96,7 @@ body {
 }
 
 .profile-info{
-    margin: 10px;
+  margin: 10px;
 }
 
 .profile-info h3 {
@@ -117,9 +117,17 @@ body {
 .profile-editor input[type=submit] {
   background-color: #4CAF50;
   color: white;
-  padding: 7px 10px;
-  margin: 8px 0;
+  padding: 7px 5px;
+  /* margin: 8px 0; */
   border: none;
   cursor: pointer;
-  width: 10%;
+  /* width: 10%; */
+}
+
+.profile-editor .txt {
+  margin-left: 8px;
+}
+
+.profile-editor h4{
+  margin-left: 8px;
 }
