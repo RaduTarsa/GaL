@@ -9,7 +9,7 @@
         <meta name="description" content="aici pui descriere">
         <meta name="keywords" content="aici pui keywords">
         <meta name="author" content="Bogdan Palasanu & Radu Tarsa">
-        <title>GaL | Service</title>
+        <title>GaL | Admin</title>
         <link rel="stylesheet" href="./stylesheets/admin.css">
     </head>
 
