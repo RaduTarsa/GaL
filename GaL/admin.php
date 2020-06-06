@@ -65,9 +65,6 @@
     <label>Delete Game</label>
     <select id="Games" name="gameList">
       <option hidden disabled selected value> -- select game -- </option>
-      <!-- <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option> -->
       <?php echo $options;?>
       <!-- <php while ($row = $res->fetch_assoc()) { echo '<option value=" '.$row['id'].' "> '.$row['username'].' </option>'; }?> -->
     </select>
@@ -83,6 +80,10 @@
     <form method="post" enctype="multipart/form-data">
       <label class="txt">Game Name</label>
       <input type="text" placeholder="Enter the name" name="gname"><br>
+      <label class="txt">Game Purpose</label>
+      <input type="text" placeholder="Enter the purpose" name="gpurpose"><br>
+      <label class="txt">Game Category</label>
+      <input type="text" placeholder="Enter the category" name="gcategory"><br>
 
       <input type="text" id="num" placeholder="Enter a number 1-10" name="num">
       <button type="button" onclick="browseButtonsOpener()">+</button><br>

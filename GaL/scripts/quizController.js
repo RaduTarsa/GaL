@@ -25,8 +25,15 @@ function checkAnswer() {
     i++;
     if(jsonData.length-1 < i){
         // close test and send points to db
-        alert('You got ' + correctCount + ' points!!!');
-        //update the test
+        // alert('You got ' + correctCount + ' points!!!');
+        // update the test
+        var score = correctCount;
+        var formdata = new FormData();
+        formdata.append("score",score);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST","scripts/scoreUpdater.php",true);
+        xhr.send(formdata);
+
         // window.location="service.php";
     }
     // callback to generate

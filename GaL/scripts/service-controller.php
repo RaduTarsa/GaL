@@ -4,25 +4,55 @@ $db = mysqli_connect('localhost', 'root', '', 'GaL');
 
 $errors = array();
 
-$query = "SELECT name from games";
-$result = mysqli_query($db, $query);
-$options = "";
-while($row = mysqli_fetch_array($result))
+$purposequery = "SELECT purpose from games";
+$purposeresult = mysqli_query($db, $purposequery);
+$purposes = "";
+while($prow = mysqli_fetch_array($purposeresult))
 {
-    $options = $options."<option>$row[0]</option>";
+    $purposes = $purposes."<option>$prow[0]</option>";
 }
 
-// $images = [];
-// $texts = [];
+$categoryquery = "SELECT category from games";
+$categoryresult = mysqli_query($db, $categoryquery);
+$categories = "";
+while($crow = mysqli_fetch_array($categoryresult))
+{
+    $categories = $categories."<option>$crow[0]</option>";
+}
+
+if(isset($_POST['get-games']))
+{
+  if(isset($_POST['gamePTypeList']) && isset($_POST['gameCTypeList']))
+  {
+    $purpose = $_POST['gamePTypeList'];
+    $category = $_POST['gameCTypeList'];
+    $query = "SELECT name from games where purpose = '$purpose' and category = '$category'";
+    $result = mysqli_query($db, $query);
+    $options = "";
+    while($row = mysqli_fetch_array($result))
+    {
+        $options = $options."<option>$row[0]</option>";
+    }
+  }
+  else {
+    echo '<script type="text/javascript"> alert("Game type not selected") </script>';
+  }
+}
 
 if(isset($_POST['get-game']))
 {
-  $selectOption = $_POST['gameList'];
-  $getid = "SELECT id from games where name = '$selectOption'";
-  $result = mysqli_query($db, $getid);
-  while(($row = mysqli_fetch_row($result))) {
-      $id = $row['0'];
+  if(isset($_POST['gameList'])){
+    $selectOption = $_POST['gameList'];
+    $getid = "SELECT id from games where name = '$selectOption'";
+    $result = mysqli_query($db, $getid);
+    while(($row = mysqli_fetch_row($result))) {
+        $id = $row['0'];
+    }
   }
+  else {
+    $id = 0;
+  }
+
   if($id)
   {
     $i = 0;

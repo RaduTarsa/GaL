@@ -30,10 +30,11 @@ if ($result = mysqli_query($db, $sql)) {
 }
 
 if(isset($_POST['upload-image'])){
-    $imgtypeerr = 0;
-    if (!in_array(strtolower(pathinfo(basename($_FILES["image"]["name"]),
-    PATHINFO_EXTENSION)) , array("jpg", "jpeg", "png"))) { $imgtypeerr = 1; }
-    if ($imgtypeerr == 1) { array_push($errors, "Profile image has to be jpg, jpeg or png"); }
+    if ($_FILES["image"]["size"] < 1) { array_push($errors, "Profile image is required"); }
+    else { if (!in_array(strtolower(pathinfo(basename($_FILES["image"]["name"]),
+    PATHINFO_EXTENSION)) , array("jpg", "jpeg", "png")))
+    { array_push($errors, "Profile image has to be jpg, jpeg or png"); } }
+    if ($_FILES["image"]["name"] > 5242880) { array_push($errors, "Profile image has to be 5MB MAX"); }
     $pname = $_SESSION['userid'].".png";
     $tname = $_FILES["image"]["tmp_name"];
     $imagepath = 'resources/userimages/'.$pname;
