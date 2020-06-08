@@ -53,6 +53,8 @@ if(isset($_POST['get-game']))
     $id = 0;
   }
 
+  $_SESSION['game_key'] = $id;
+
   if($id)
   {
     $i = 0;

@@ -1,6 +1,7 @@
 <?php include('scripts/loginValidation.php') ?>
 <?php include('scripts/hideAdmin.php') ?>
 <?php include('scripts/service-controller.php') ?>
+<?php include('scripts/test.php') ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -66,7 +67,9 @@
           <?php echo $options;?>
         </select>
         <input type="submit" name="get-game" value="Select">
-        <input id="openbtn" type="button" value="Open"/>
+        <?php  if(isset($_POST['gameList'])) : ?>
+          <input id="openbtn" type="button" value="Open"/>
+        <?php endif ?>
       </div>
     </form>
 
@@ -84,7 +87,7 @@
           </div>
         </div>
         <div class="game-tester">
-          <button id="testingModalButton">Start The Test</button>
+          <button id="testingModalButton">Start Test</button>
           <div id="myTestingModal" class="modal">
             <div class="modal-content">
               <script src="<?php echo $test; ?>"></script>
