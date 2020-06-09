@@ -1,5 +1,6 @@
 <?php
-
+//aici avem partea de serviciu in care selectam un joc dupa criteriile purpose si category
+//putem sa invatam sau sa ne testam cunostintele
 $db = mysqli_connect('localhost', 'root', '', 'GaL');
 
 $errors = array();

@@ -1,5 +1,7 @@
 <?php
 
+//verificam daca userul are acces la pagina de admin
+
 $db = mysqli_connect('localhost', 'root', '', 'GaL');
 
 $username = $_SESSION['username'];

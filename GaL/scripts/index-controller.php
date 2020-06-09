@@ -1,5 +1,5 @@
 <?php
-
+//afisarea topului per categorie
 $db = mysqli_connect('localhost', 'root', '', 'GaL');
 
 $categoryquery = "SELECT distinct category from games";

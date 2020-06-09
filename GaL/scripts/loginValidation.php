@@ -1,4 +1,5 @@
 <?php
+//validam daca userul este logat sau nu
   session_start();
 
   if (!isset($_SESSION['username'])) {

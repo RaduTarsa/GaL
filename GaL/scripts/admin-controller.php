@@ -1,9 +1,11 @@
 <?php
 
+//conexiunea cu baza de date
 $db = mysqli_connect('localhost', 'root', '', 'GaL');
 
 $errors = array();
 
+//listarea jocurilor
 $query = "SELECT name from games";
 $result = mysqli_query($db, $query);
 $options = "";
@@ -12,6 +14,7 @@ while($row = mysqli_fetch_array($result))
     $options = $options."<option>$row[0]</option>";
 }
 
+//functia de delete al userilor
 if(isset($_POST['delete-user'])){
     $user = $_POST['uname'];
     $delete = "DELETE FROM users WHERE username = '$user'";
@@ -25,6 +28,7 @@ if(isset($_POST['delete-user'])){
     }
  }
 
+//functia de promovare a userilor ca admini
  if(isset($_POST['promote-user'])){
      $user = $_POST['uname'];
      $update = "UPDATE users SET isadmin = 1 WHERE username = '$user' and isadmin = 0";
@@ -38,6 +42,7 @@ if(isset($_POST['delete-user'])){
      }
   }
 
+//functia de retrogradare a adminilor ca useri
   if(isset($_POST['demote-user'])){
       $user = $_POST['uname'];
       $update = "UPDATE users SET isadmin = 0 WHERE username = '$user' and isadmin = 1";
@@ -58,6 +63,7 @@ if(isset($_POST['delete-user'])){
       $items[] = $row['username'];
   }
 
+//functia de stergere a jocurilor
   if(isset($_POST['delete-game'])){
     $game = $_POST['gameList'];
     $getid = "SELECT id from games where name = '$game'";
@@ -85,8 +91,8 @@ if(isset($_POST['delete-user'])){
     }
   }
 
+//functia de adaugare al jocurilor
   if (isset($_POST['add-game'])) {
-     // receive all input values from the form
      $gamename = mysqli_real_escape_string($db, $_POST['gname']);
      $gamepurpose = mysqli_real_escape_string($db, $_POST['gpurpose']);
      $gamecategory = mysqli_real_escape_string($db, $_POST['gcategory']);
@@ -132,6 +138,7 @@ if(isset($_POST['delete-user'])){
      $imgsizeerr = 0;
      $txtsizeerr = 0;
 
+    //se testeaza daca imaginile, texturile si testul sunt valide
      for($i=0; $i<$num; $i++)
      {
        switch ($i)
@@ -261,6 +268,7 @@ if(isset($_POST['delete-user'])){
      // Finally, upload game if there are no errors in the form
      if (count($errors) == 0) {
 
+    //inserarea in baza de date si uploadul
      	$query = "INSERT INTO games (name, purpose, category) VALUES('$gamename', '$gamepurpose', '$gamecategory')";
      	$query_run = mysqli_query($db, $query);
       if ($query_run){

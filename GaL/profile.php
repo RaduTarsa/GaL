@@ -40,8 +40,6 @@
 
   <section class="profile-info">
       <img class="user-img" src=<?php echo $_SESSION['imagepath'] ?> alt="profile picture" width="200px" height="200px">
-      <!-- TO DO: user-badge -->
-      <!--<img class="user-badge"src="resources/userbadge.png" alt="user badge" width="42px" height="42px"> -->
       <h3>
           <?php echo $_SESSION['firstname'];?>
           <?php echo $_SESSION['lastname'];?>

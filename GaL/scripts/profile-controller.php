@@ -1,5 +1,5 @@
 <?php
-
+//sectiunea profilului in care adaugam imaginea de profil, schimbam numele si prenumele
 $db = mysqli_connect('localhost', 'root', '', 'GaL');
 
 $errors = array();

@@ -1,4 +1,5 @@
 <?php
+//register si login
 session_start();
 
 // initializing variables

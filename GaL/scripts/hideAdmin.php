@@ -1,5 +1,5 @@
 <?php
-
+//verifica daca este admin pentru a ascunde sectiunea admin din nav-bar
 $db = mysqli_connect('localhost', 'root', '', 'GaL');
 
 $username = $_SESSION['username'];

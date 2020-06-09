@@ -1,3 +1,4 @@
+//aici facem handling la modal
 var modal1 = document.getElementById("myLearningModal");
 var modal2 = document.getElementById("myTestingModal");
 var btn1 = document.getElementById("learingModalButton");

@@ -1,3 +1,4 @@
+//functia de autocomplete pentru stringurile date
 function autocomplete(inp, arr) {
   var currentFocus;
   inp.addEventListener("input", function(e) {

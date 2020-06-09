@@ -75,7 +75,7 @@
               <span class="close1">&times;</span>
                 <div class="img-content">
                   <?php foreach ($images as $key => $value) { echo '<img src='; echo $images[$key];
-                  echo ' style="width:100%">'; echo '<p>'; echo $texts[$key]; echo '</p>'; echo '<br>';} ?>
+                  echo ' style="width:100%" alt="pic">'; echo '<p>'; echo $texts[$key]; echo '</p>'; echo '<br>';} ?>
                 </div>
             </div>
           </div>

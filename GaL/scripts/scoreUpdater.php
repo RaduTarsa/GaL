@@ -1,4 +1,5 @@
 <?php
+//aici facem handling la score cand terminam un test
 session_start();
 
 $db = mysqli_connect('localhost', 'root', '', 'GaL');
