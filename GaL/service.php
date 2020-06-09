@@ -11,9 +11,10 @@
         <meta name="author" content="Bogdan Palasanu & Radu Tarsa">
         <title>GaL | Service</title>
         <link rel="stylesheet" href="./stylesheets/service.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
 
-<body>
+<body style="font-family: 'Roboto', sans-serif;">
   <header>
     <div class="container">
       <div id="title">
@@ -39,7 +40,7 @@
   </header>
 
 <form method="post">
-    <label>Choose Game Type</label>
+    <h4>Choose Game Type</h4>
     <select name="gamePTypeList">
       <option hidden disabled selected value>game purpose</option>
       <?php echo $purposes;?>
@@ -54,7 +55,7 @@
 <div>
     <form method="post">
       <div class="game-selector">
-        <label>Select Game</label>
+        <h4>Select Game</h4>
         <select id="Games" name="gameList">
           <option hidden disabled selected value> select game </option>
           <?php echo $options;?>
@@ -114,6 +115,7 @@
   <script src="scripts/serviceController.js"></script>
   <script src="scripts/quizController.js"></script>
 
+  <br><br><br>
   <footer>
     <p>Bogdan Palasanu & Radu Tarsa, Copyright &copy; 2020</p>
   </footer>

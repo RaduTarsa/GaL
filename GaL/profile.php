@@ -10,9 +10,10 @@
         <meta name="author" content="Bogdan Palasanu & Radu Tarsa">
         <title>GaL | Profile</title>
         <link rel="stylesheet" href="./stylesheets/profile.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
 
-<body>
+<body style="font-family: 'Roboto', sans-serif;">
   <header>
     <div class="container">
       <div id="title">
@@ -70,7 +71,7 @@
   </div>
 
 
-  <!-- TO DO: DEACTIVATE ACCOUNT BUTTON -->
+  <br><br><br>
   <footer>
     <p>Bogdan Palasanu & Radu Tarsa, Copyright &copy; 2020</p>
   </footer>

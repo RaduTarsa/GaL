@@ -11,9 +11,10 @@
         <meta name="author" content="Bogdan Palasanu & Radu Tarsa">
         <title>GaL | Welcome</title>
         <link rel="stylesheet" href="./stylesheets/index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
 
-<body>
+<body style="font-family: 'Roboto', sans-serif;">
   <header>
     <div class="container">
       <div id="title">
@@ -48,17 +49,25 @@
   	<?php endif ?>
   </div>
 
-  <form method="post">
-      <label>Top Users/Category</label>
-      <select name="gameCTypeList">
-        <option hidden disabled selected value>game category</option>
-        <?php echo $categories;?>
-      </select>
-      <input type="submit" name="get-top-users" value="Select">
-  </form>
 
-  <section class="description">
+  <section>
+    <p>This site is made by Bogdan Palasanu and Radu Tarsa.</p>
+    <p>This is a server application that consists in a GAME PLAYING LEARNING MONITOR.</p>
+    <p>GaL as it is abbreviated has the power of testing the user in the best way possible.</p>
+    <p>In this page you'll see a top 10 users that will make you learn more and more because competion is in your blood.</p>
+    <p>All you have to do is to roam this site and see what we have prepared for you.</p>
+    <p>GOOD LUCK!!!</p>
+  </section>
+
+  <section>
     <p>Top 10 Players</p>
+    <form method="post">
+        <select name="gameCTypeList">
+          <option hidden disabled selected value>game category</option>
+          <?php echo $categories;?>
+        </select>
+        <input type="submit" name="get-top-users" value="Select">
+    </form>
     <?php echo $text ?>
   </section>
 
@@ -85,6 +94,8 @@
   </rss> -->
 <!-- ////////////////////////////////////////// -->
 
+
+  <br><br><br>
   <footer>
     <p>Bogdan Palasanu & Radu Tarsa, Copyright &copy; 2020</p>
   </footer>

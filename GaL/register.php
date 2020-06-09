@@ -9,9 +9,10 @@
         <meta name="author" content="Bogdan Palasanu & Radu Tarsa">
         <title>GaL | Register</title>
         <link rel="stylesheet" href="./stylesheets/register.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
 
-<body>
+<body style="font-family: 'Roboto', sans-serif;">
 
   <form action="register.php" method="post">
     <?php include('scripts/errors.php'); ?>
@@ -31,6 +32,7 @@
 
   </form>
 
+  <br><br><br>
   <footer>
     <p>Bogdan Palasanu & Radu Tarsa, Copyright &copy; 2020</p>
   </footer>
