@@ -1,5 +1,6 @@
 <?php include('scripts/loginValidation.php') ?>
 <?php include('scripts/hideAdmin.php') ?>
+<?php include('scripts/index-controller.php') ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -47,9 +48,42 @@
   	<?php endif ?>
   </div>
 
+  <form method="post">
+      <label>Top Users/Category</label>
+      <select name="gameCTypeList">
+        <option hidden disabled selected value>game category</option>
+        <?php echo $categories;?>
+      </select>
+      <input type="submit" name="get-top-users" value="Select">
+  </form>
+
   <section class="description">
-    <h1>scris scris scris...</h1>
+    <p>Top 10 Players</p>
+    <?php echo $text ?>
   </section>
+
+<!-- ////////////////////////////////////////// -->
+  <!-- <xml version="1.0" encoding="UTF-8" ?>
+  <rss version="2.0">
+
+  <channel>
+    <title>W3Schools Home Page</title>
+    <link>https://www.w3schools.com</link>
+    <description>Free web building tutorials</description>
+    <item>
+      <title>RSS Tutorial</title>
+      <link>https://www.w3schools.com/xml/xml_rss.asp</link>
+      <description>New RSS tutorial on W3Schools</description>
+    </item>
+    <item>
+      <title>XML Tutorial</title>
+      <link>https://www.w3schools.com/xml</link>
+      <description>New XML tutorial on W3Schools</description>
+    </item>
+  </channel>
+
+  </rss> -->
+<!-- ////////////////////////////////////////// -->
 
   <footer>
     <p>Bogdan Palasanu & Radu Tarsa, Copyright &copy; 2020</p>

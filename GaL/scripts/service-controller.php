@@ -4,7 +4,7 @@ $db = mysqli_connect('localhost', 'root', '', 'GaL');
 
 $errors = array();
 
-$purposequery = "SELECT purpose from games";
+$purposequery = "SELECT distinct purpose from games";
 $purposeresult = mysqli_query($db, $purposequery);
 $purposes = "";
 while($prow = mysqli_fetch_array($purposeresult))
@@ -12,7 +12,7 @@ while($prow = mysqli_fetch_array($purposeresult))
     $purposes = $purposes."<option>$prow[0]</option>";
 }
 
-$categoryquery = "SELECT category from games";
+$categoryquery = "SELECT distinct category from games";
 $categoryresult = mysqli_query($db, $categoryquery);
 $categories = "";
 while($crow = mysqli_fetch_array($categoryresult))

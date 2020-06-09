@@ -1,7 +1,6 @@
 <?php include('scripts/loginValidation.php') ?>
 <?php include('scripts/hideAdmin.php') ?>
 <?php include('scripts/service-controller.php') ?>
-<?php include('scripts/test.php') ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -38,12 +37,6 @@
       </div>
     </div>
   </header>
-
-  <section class="description">
-    <h1>Aceasta este o descriere a site-ului.</h1>
-  </section>
-
-  <br>
 
 <form method="post">
     <label>Choose Game Type</label>
@@ -118,7 +111,6 @@
     </div>
 </div>
 
-  <!-- <script src="resources/games/1/test.json"></script> -->
   <script src="scripts/serviceController.js"></script>
   <script src="scripts/quizController.js"></script>
 

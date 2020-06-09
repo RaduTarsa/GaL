@@ -66,7 +66,6 @@
     <select id="Games" name="gameList">
       <option hidden disabled selected value> -- select game -- </option>
       <?php echo $options;?>
-      <!-- <php while ($row = $res->fetch_assoc()) { echo '<option value=" '.$row['id'].' "> '.$row['username'].' </option>'; }?> -->
     </select>
     <input type="submit" name="delete-game" value="Delete">
   </form>
