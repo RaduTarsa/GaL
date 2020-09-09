@@ -1,4 +1,5 @@
 <?php
+//register si login
 session_start();
 
 // initializing variables
@@ -35,9 +36,23 @@ if (isset($_POST['register_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (username, password)
-  			  VALUES('$username', '$password')";
+    $firstname = 'changeme';
+    $lastname = 'changeme';
+
+    $imagepath = 'resources/profilepicture.png';
+
+    $isadmin = 0;
+
+  	$query = "INSERT INTO users (username, firstname, lastname, password, imagepath, isadmin)
+  			  VALUES('$username', '$firstname', '$lastname', '$password', '$imagepath', '$isadmin')";
   	mysqli_query($db, $query);
+    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+  	$results = mysqli_query($db, $query);
+  	if (mysqli_num_rows($results) == 1) {
+      while ($row = mysqli_fetch_row($results)) {
+        $_SESSION['user_key'] = $row[0];
+      }
+    }
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
   	header('location: index.php');
@@ -61,6 +76,9 @@ if (isset($_POST['login_user'])) {
   	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
+      while ($row = mysqli_fetch_row($results)) {
+        $_SESSION['user_key'] = $row[0];
+      }
   	  $_SESSION['username'] = $username;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');

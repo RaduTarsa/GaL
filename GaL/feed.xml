@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <rss version="2.0">
+
+  <channel>
+    <title>GaL Home Page</title>
+    <link>http://localhost/GaL/</link>
+    <description>Game Playing Learn Monitor </description>
+    <language>en-us</language>
+    <item>
+      <title>Top Ten Users</title>
+      <pubDate>Wed 9 Jun 2020 9:13</pubDate>
+      <link>http://localhost/GaL/index.php</link>
+      <description><![CDATA[Visit the top 10 <a href="http://localhost/GaL/"> users </a> on my website!]]> </description>
+    </item>
+  </channel>
+
+  </rss>
